@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; }
+body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+
+.maplibregl-popup-content { padding: 0 !important; border-radius: 12px !important; overflow: hidden; }
+.maplibregl-popup-tip { display: none; }
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #ccc; border-radius: 2px; }
+
+/* 🟢 NEW: Building pulse animation for selected property */
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.3); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes rotate-marker {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.marker-pulse { animation: pulse-ring 1.5s infinite; }
+.marker-selected-ring {
+  position: absolute;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  border: 3px solid #7c3aed;
+  animation: pulse-ring 1.5s infinite;
+  top: -10px; left: -10px;
+  pointer-events: none;
+}
+
+/* 🟢 NEW: Chatbot styles */
+.chat-bubble-user {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 18px 18px 4px 18px;
+  padding: 10px 14px;
+  max-width: 80%;
+  margin-left: auto;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.chat-bubble-ai {
+  background: #f8f7ff;
+  color: #1a1a2e;
+  border-radius: 18px 18px 18px 4px;
+  padding: 10px 14px;
+  max-width: 85%;
+  font-size: 14px;
+  line-height: 1.5;
+  border: 1px solid #e8e4ff;
+}
