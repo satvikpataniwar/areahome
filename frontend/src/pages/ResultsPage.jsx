@@ -24,7 +24,7 @@ export default function ResultsPage() {
     }
 
     setLoading(true)
-    axios.post('http://localhost:8000/api/search', { query })
+    axios.post('/api/search', { query })
       .then(res => {
         setResults(res.data.results)
         if (res.data.results.length > 0) {

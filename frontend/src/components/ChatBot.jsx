@@ -27,7 +27,7 @@ export default function ChatBot({ searchContext }) {
     setIsLoading(true)
 
     try {
-      const res = await axios.post('http://localhost:8000/api/chat', {
+      const res = await axios.post('/api/chat', {
         message: inputText,
         context: searchContext
       })

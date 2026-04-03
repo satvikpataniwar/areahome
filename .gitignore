@@ -5,8 +5,6 @@ __pycache__/
 *.pyd
 .Python
 *.egg-info/
-dist/
-build/
 
 # Environment variables (DO NOT COMMIT API KEYS)
 .env
@@ -15,9 +13,11 @@ build/
 .env.production
 
 # Node
+node_modules/
 frontend/node_modules/
 frontend/dist/
 frontend/.vite/
+dist/
 
 # Logs
 *.log
